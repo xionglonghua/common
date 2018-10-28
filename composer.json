@@ -1,0 +1,21 @@
+{
+    "name": "xionglonghua/common",
+    "description": "yt的common包",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "熊龙华",
+            "email": "longhuadaxia@gmail.com"
+        }
+    ],
+    "require": {
+        "lspbupt/yii2-curl": "*",
+        "phpoffice/phpspreadsheet": "*",
+        "doctrine/annotations": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "lspbupt\\common\\": "src/"
+        }
+    }
+}
