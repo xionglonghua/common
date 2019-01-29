@@ -122,62 +122,9 @@ class OuterHelper extends \xionglonghua\curl\CurlHttp
         $postArr['access_token'] = $dataArr['token'];
         $sign = self::getSign($method, $uri, $postArr, $dataArr);
         if ($sign != $dataArr['sign']) {
-            //由于之前客户端的一些原因，需要做一些特殊判断保证客户端不闪退
-            return self::specialProcess($method, $uri, $postArr, $dataArr);
+            return 'H_OUTER_SIGN_ERR';
         }
         return false;
-    }
-
-    //特殊判断
-    public static function specialProcess($method, $uri, $postArr, $dataArr)
-    {
-        $device = Yii::createObject([
-            'class' => '\xionglonghua\common\device\Mobile',
-        ]);
-        //由于之前安卓3.8.8写错，需要做一下特殊判断
-        $errInterfaces = [
-            Mobile::SYSTEM_ANDROID => [
-                's/project/similarProjects' => 's/project/setProjectOnlineByFounder',
-                'action/change_meeting' => 's/meeting/remindFeedbackLater',
-            ],
-        ];
-        foreach ($errInterfaces as $key => $val) {
-            if ($device->system == $key) {
-                foreach ($val as $err => $right) {
-                    $rightUri = str_replace($err, $right, $uri);
-                    $sign = self::getSign($method, $rightUri, $postArr, $dataArr);
-                    if ($sign === $dataArr['sign']) {
-                        return false;
-                    }
-                }
-            }
-        }
-
-        //可能有部份请求没有下划线
-        $urlList = [
-            Mobile::SYSTEM_ANDROID => [
-                '/s/meeting/notArrangedMeeting',
-                '/s/meeting/arrangedMeeting',
-                '/s/project/getSuggestion',
-            ],
-            Mobile::SYSTEM_IOS => [
-                '/s/project/checkProjectCollected',
-            ],
-        ];
-        foreach ($urlList as $key => $val) {
-            if ($device->system == $key) {
-                foreach ($val as $checkUrl) {
-                    if (strpos($uri, $checkUrl) !== false) {
-                        $rightUri = '/'.$uri;
-                        $sign = self::getSign($method, $rightUri, $postArr, $dataArr);
-                        if ($sign === $dataArr['sign']) {
-                            return false;
-                        }
-                    }
-                }
-            }
-        }
-        return 'H_OUTER_SIGN_ERR';
     }
 
     public static function checkWebAjaxSign($authKey, $signature, &$dataArr = [])
