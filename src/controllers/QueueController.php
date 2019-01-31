@@ -7,7 +7,7 @@ use yii\helpers\ArrayHelper;
 use yii\console\Exception;
 use yii\base\ModelEvent;
 use yii\di\Instance;
-use koenigseggposche\yii2mns\Mns;
+use xionglonghua\yii2mns\Mns;
 use Yii;
 
 /**

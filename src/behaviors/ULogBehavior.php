@@ -9,7 +9,7 @@ use yii\base\Application;
 use yii\helpers\ArrayHelper;
 use yii\base\InvalidConfigException;
 use yii\helpers\UnsetArrayValue;
-use koenigseggposche\yii2mns\Mns;
+use xionglonghua\yii2mns\Mns;
 
 //todo 支持配置uuid
 class ULogBehavior extends Behavior
