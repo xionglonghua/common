@@ -28,9 +28,9 @@ class InnerFilter extends Behavior
         if (in_array($action, $this->actions)) {
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             // ip不正确
-            if (!StringHelper::isInnerIP()) {
+            /*if (!StringHelper::isInnerIP()) {
                 throw new BadRequestHttpException(Yii::t('yii', 'IP地址不正确'), 1);
-            }
+            }*/
             //prettyurl处理参数，会把uri的slash部分变成get参数
             //因此，$_GET和$app->request->get都不是原始get，但是queryString不变。
             //For a POST request, include get params as a part of path(i.e. action).
