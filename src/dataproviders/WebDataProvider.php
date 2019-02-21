@@ -3,7 +3,7 @@
 namespace xionglonghua\common\dataproviders;
 
 use xionglonghua\common\forms\WebDPFieldForm;
-use xionglonghua\curl\CurlHttp;
+use lspbupt\curl\CurlHttp;
 use yii\base\InvalidConfigException;
 use yii\data\BaseDataProvider;
 use yii\helpers\ArrayHelper;

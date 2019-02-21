@@ -9,7 +9,7 @@
 namespace xionglonghua\common\log;
 
 use yii\log\Target;
-use xionglonghua\curl\CurlHttp;
+use lspbupt\curl\CurlHttp;
 
 /**
  * DingTarget Send a message to the ding Talk group by the chat robot.

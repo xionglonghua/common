@@ -6,7 +6,7 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use xionglonghua\common\device\Mobile;
 
-class OuterHelper extends \xionglonghua\curl\CurlHttp
+class OuterHelper extends \lspbupt\curl\CurlHttp
 {
     //私钥
     public $pkey = '';
