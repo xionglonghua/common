@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "lspbupt/yii2-curl": "dev-master",
+        "xionglonghua/yii2-curl": "*",
         "phpoffice/phpspreadsheet": "*",
         "doctrine/annotations": "*"
     },

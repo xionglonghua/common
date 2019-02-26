@@ -4,7 +4,7 @@ namespace xionglonghua\common\actions;
 
 use xionglonghua\common\helpers\ArrayHelper;
 use xionglonghua\common\helpers\SysMsg;
-use lspbupt\curl\CurlHttp;
+use xionglonghua\curl\CurlHttp;
 use Yii;
 use yii\base\Action;
 use yii\base\InvalidConfigException;

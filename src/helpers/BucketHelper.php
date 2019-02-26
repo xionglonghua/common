@@ -17,7 +17,7 @@ class BucketHelper
                 return $ret['data']['url'];
             }
             throw new \Exception('error x-file-option token', 1);
-        } elseif ($oss instanceof \lspbupt\curl\CurlHttp) {
+        } elseif ($oss instanceof \xionglonghua\curl\CurlHttp) {
             $oss->setAction("/$bucket/upload?filekey=$filekey&object=$object");
             return $oss->getUrl();
         } else {
@@ -36,7 +36,7 @@ class BucketHelper
             $counterToken && $oss->setHeader('X-FILE-COUNTER-TOKEN', $counterToken);
             $ret = $oss->setGet()->setHeader('X-FILE-OPTION', 'TOKEN')->httpExec($path, []);
             $url = ArrayHelper::getValue($ret, 'data.url', $url);
-        } elseif ($oss instanceof \lspbupt\curl\CurlHttp) {
+        } elseif ($oss instanceof \xionglonghua\curl\CurlHttp) {
             $url = $oss->setAction($path)->url;
         } else {
             throw new \Exception('这个类不是oss组件', 1);

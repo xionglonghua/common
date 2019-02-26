@@ -3,7 +3,7 @@
 namespace xionglonghua\common\actions;
 
 use xionglonghua\common\dataproviders\WebDataProvider;
-use lspbupt\curl\CurlHttp;
+use xionglonghua\curl\CurlHttp;
 use Yii;
 use yii\base\Action;
 use yii\base\InvalidConfigException;

@@ -4,7 +4,7 @@ namespace xionglonghua\common\db\search;
 
 use Yii;
 use xionglonghua\common\helpers\ArrayHelper;
-use lspbupt\curl\CurlHttp;
+use xionglonghua\curl\CurlHttp;
 use yii\base\Model;
 use yii\di\Instance;
 

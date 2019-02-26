@@ -6,7 +6,7 @@ use Yii;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 
-class InnerHelper extends \lspbupt\curl\CurlHttp
+class InnerHelper extends \xionglonghua\curl\CurlHttp
 {
     public $responseHandler;
     private $_resHandler;
