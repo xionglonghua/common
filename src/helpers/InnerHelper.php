@@ -145,7 +145,7 @@ class InnerHelper extends \xionglonghua\curl\CurlHttp
         return hash_hmac('sha1', $str, $secret.'&');
     }
 
-    public function percentEncode($str)
+    public static function percentEncode($str)
     {
         $res = urlencode($str);
         $res = preg_replace('/\+/', '%20', $res);
